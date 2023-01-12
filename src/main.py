@@ -1,0 +1,44 @@
+from logicYatzy import Yatzy
+import random
+
+print("Welcome to Yahtzee! \n")
+print("If this is your first time I recommend you to read the rules of the game that you can find in the README of the project. \n")
+
+# Tabla de puntuaciones
+playerOne = {"Ace": 0, "Twos": 0, "Threes": 0, "Fours": 0, "Fives": 0, "Sixes": 0,
+             "ThreeOfAKind": 0, "FourOfAKind": 0, "FullHouse": 0, "smallStraight": 0,
+             "largeStraight": 0, "Yathzee": 0, "Chance": 0}
+ 
+totalScore: 0
+
+
+# Bucle para tener un control de los turnos. Poner range de 14 de nuevo
+for roll in range(1,2):
+    print("Turn number " + str(roll) + "!")
+    # Lista en la que se van a almacenar las tiradas de los dados
+    dice = []
+    for roll in range(5):
+        # Añade a la lista un número aleatorio entre 1 y 6.
+        dice.append(random.randint(1,6))
+
+    # Mostramos dados de la primera tirada
+    print("Roll 1: ", end="")
+    for i in range(len(dice)):
+        if i < len(dice) - 1:
+            print(dice[i], end =" ")
+        else:
+            print(dice[i])
+            # print("\n")
+
+    # Dados guardados
+    keep = input("Qué números de la tirada te gustaría mantener?")
+    keep = keep.split(',')
+
+    print("Roll 2: ", end ="")
+    for i in range(5):
+        if str(i + 1) not in keep:
+            dice[i] = random.randint(1,6)
+        if i < len(dice) - 1:
+            print(dice[i], end =" ")
+        else:
+            print(dice[i])

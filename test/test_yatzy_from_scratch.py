@@ -1,5 +1,5 @@
 import pytest
-from src.yatzy import Yatzy
+from src.logicYatzy import Yatzy
 
 
 def test_chance():
