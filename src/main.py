@@ -16,29 +16,40 @@ totalScore: 0
 for roll in range(1,2):
     print("Turn number " + str(roll) + "!")
     # Lista en la que se van a almacenar las tiradas de los dados
-    dice = []
+    diceRollOne = []
     for roll in range(5):
         # Añade a la lista un número aleatorio entre 1 y 6.
-        dice.append(random.randint(1,6))
+        diceRollOne.append(random.randint(1,6))
 
     # Mostramos dados de la primera tirada
     print("Roll 1: ", end="")
-    for i in range(len(dice)):
-        if i < len(dice) - 1:
-            print(dice[i], end =" ")
+    for i in range(len(diceRollOne)):
+        if i < len(diceRollOne) - 1:
+            print(diceRollOne[i], end =" ")
         else:
-            print(dice[i])
-            # print("\n")
+            print(diceRollOne[i])
 
-    # Dados guardados
+    # Dados que guarda el jugador para la próxima tirada.
     keep = input("Qué números de la tirada te gustaría mantener?")
     keep = keep.split(',')
 
+    for i in range(0, len(keep)):
+        keep[i] = int(keep[i])
+    
+    # Bucle para transformar los String de los dados guardados a Integers.
+    diceRollTwo = []
+    diceRollTwo.extend(keep)
+
     print("Roll 2: ", end ="")
-    for i in range(5):
-        if str(i + 1) not in keep:
-            dice[i] = random.randint(1,6)
-        if i < len(dice) - 1:
-            print(dice[i], end =" ")
+    for i in range(5 - len(keep)):
+
+        # Más 1 porque empieza en 0.
+        i = i + 1
+        # Arregla esto Antonio
+        diceRollTwo[i].extend(random.randint(1,6))
+
+        if i < len(diceRollTwo) - 1:
+            print(diceRollTwo[i], end =" ")
         else:
-            print(dice[i])
+            print(diceRollTwo[i])
+   
