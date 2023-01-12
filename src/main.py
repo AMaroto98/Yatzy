@@ -49,10 +49,37 @@ for roll in range(1,2):
         diceRollTwo.append(randomDice)
     
     # Bucle para Imprimir los resultados del segundo Roll.
-    for i in range(len(diceRollOne)):
+    for i in range(len(diceRollTwo)):
         
         if i < len(diceRollTwo) - 1:
             print(diceRollTwo[i], end =" ")
         else:
             print(diceRollTwo[i])
+
+    # Dados que guarda el jugador para la próxima tirada.
+    # Faltan más condiciones, por si no quiere guardar ninguno.
+    keep = input("Qué números de la tirada te gustaría mantener?")
+    keep = keep.split(',')
+
+    for i in range(0, len(keep)):
+        keep[i] = int(keep[i])
+    
+    # Bucle para transformar los String de los dados guardados a Integers.
+    diceRollThree = []
+    diceRollThree.extend(keep)
+
+    print("Roll 3: ", end ="")
+    for i in range(5 - len(keep)):
+
+        # Más adelante refactorizar esto, de momento se queda así para tener un control de lo que ocurre
+        randomDice = random.randint(1,6)
+        diceRollThree.append(randomDice)
+    
+    # Bucle para Imprimir los resultados del segundo Roll.
+    for i in range(len(diceRollThree)):
+        
+        if i < len(diceRollThree) - 1:
+            print(diceRollThree[i], end =" ")
+        else:
+            print(diceRollThree[i])
 
