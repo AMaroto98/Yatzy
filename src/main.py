@@ -32,14 +32,17 @@ for roll in range(1,2):
     # Dados que guarda el jugador para la próxima tirada.
     # Faltan más condiciones, por si no quiere guardar ninguno.
     keep = input("Qué números de la tirada te gustaría mantener?")
-    keep = keep.split(',')
 
-    for i in range(0, len(keep)):
-        keep[i] = int(keep[i])
-    
-    # Bucle para transformar los String de los dados guardados a Integers.
     diceRollTwo = []
-    diceRollTwo.extend(keep)
+    if len(keep) < 0:
+        keep = keep.split(',')
+
+        # Bucle para transformar los String de los dados guardados a Integers.
+        for i in range(0, len(keep)):
+            keep[i] = int(keep[i])
+        
+        # Añadimos los dados guardados a la siguiente jugada.
+        diceRollTwo.extend(keep)
 
     print("Roll 2: ", end ="")
     for i in range(5 - len(keep)):
@@ -59,14 +62,18 @@ for roll in range(1,2):
     # Dados que guarda el jugador para la próxima tirada.
     # Faltan más condiciones, por si no quiere guardar ninguno.
     keep = input("Qué números de la tirada te gustaría mantener?")
-    keep = keep.split(',')
 
-    for i in range(0, len(keep)):
-        keep[i] = int(keep[i])
-    
-    # Bucle para transformar los String de los dados guardados a Integers.
     diceRollThree = []
-    diceRollThree.extend(keep)
+
+    if len(keep) < 0:
+        keep = keep.split(',')
+
+         # Bucle para transformar los String de los dados guardados a Integers.
+        for i in range(0, len(keep)):
+            keep[i] = int(keep[i])
+        
+        # Añadimos los dados guardados a la siguiente jugada.
+        diceRollThree.extend(keep)
 
     print("Roll 3: ", end ="")
     for i in range(5 - len(keep)):
