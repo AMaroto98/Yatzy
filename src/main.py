@@ -30,6 +30,7 @@ for roll in range(1,2):
             print(diceRollOne[i])
 
     # Dados que guarda el jugador para la próxima tirada.
+    # Faltan más condiciones, por si no quiere guardar ninguno.
     keep = input("Qué números de la tirada te gustaría mantener?")
     keep = keep.split(',')
 
@@ -43,13 +44,15 @@ for roll in range(1,2):
     print("Roll 2: ", end ="")
     for i in range(5 - len(keep)):
 
-        # Más 1 porque empieza en 0.
-        i = i + 1
-        # Arregla esto Antonio
-        diceRollTwo[i].extend(random.randint(1,6))
-
+        # Más adelante refactorizar esto, de momento se queda así para tener un control de lo que ocurre
+        randomDice = random.randint(1,6)
+        diceRollTwo.append(randomDice)
+    
+    # Bucle para Imprimir los resultados del segundo Roll.
+    for i in range(len(diceRollOne)):
+        
         if i < len(diceRollTwo) - 1:
             print(diceRollTwo[i], end =" ")
         else:
             print(diceRollTwo[i])
-   
+
