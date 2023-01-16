@@ -12,8 +12,6 @@ playerOne = {"Ones": 0, "Twos": 0, "Threes": 0, "Fours": 0, "Fives": 0, "Sixes":
              "ThreeOfAKind": 0, "FourOfAKind": 0, "FullHouse": 0, "smallStraight": 0,
              "largeStraight": 0, "Yatzy": 0, "Chance": 0}
  
-totalScore: 0
-
 
 # Bucle para tener un control de los turnos. Poner range de 14 de nuevo
 for roll in range(1,14):
@@ -100,7 +98,7 @@ for roll in range(1,14):
     # Top Score
     if answer == "Top":
 
-        score_choice = input("Dónde quieres anotar los puntos? Ones, Twos, etc.?")
+        score_choice = input("Dónde quieres anotar los puntos? Ones, Twos, etc.? ")
         
         if score_choice == "Ones":
             playerOne.update({"Ones": Yatzy.ones(*diceRollThree)})
@@ -118,13 +116,25 @@ for roll in range(1,14):
     # Bot Score
     elif answer == "Bot":
 
-        playerOne.update({"ThreeOfAKind": Yatzy.three_of_a_kind(*diceRollThree)})
-        playerOne.update({"FourOfAKind": Yatzy.four_of_a_kind(*diceRollThree)})
-        playerOne.update({"FullHouse": Yatzy.fullHouse(*diceRollThree)})
-        playerOne.update({"smallStraight": Yatzy.smallStraight(*diceRollThree)})
-        playerOne.update({"largeStraight": Yatzy.largeStraight(*diceRollThree)})
-        playerOne.update({"Yatzy": Yatzy.yatzy(*diceRollThree)})
-        playerOne.update({"Chance": Yatzy.chance(*diceRollThree)})
+        score_choice = input("Dónde quieres anotar los puntos? Three of a Kind, Four of a Kind, Full House etc.? ")
+        if score_choice == "Three":
+            playerOne.update({"ThreeOfAKind": Yatzy.three_of_a_kind(*diceRollThree)})
+        if score_choice == "Four":
+            playerOne.update({"FourOfAKind": Yatzy.four_of_a_kind(*diceRollThree)})
+        if score_choice == "Full House":
+            playerOne.update({"FullHouse": Yatzy.fullHouse(*diceRollThree)})
+        if score_choice == "Small":
+            playerOne.update({"smallStraight": Yatzy.smallStraight(*diceRollThree)})
+        if score_choice == "Large":
+            playerOne.update({"largeStraight": Yatzy.largeStraight(*diceRollThree)})
+        if score_choice == "Yatzy":
+            playerOne.update({"Yatzy": Yatzy.yatzy(*diceRollThree)})
+        if score_choice == "Chance":
+            playerOne.update({"Chance": Yatzy.chance(*diceRollThree)})
     
     else:
         print("Respuesta no valida.")
+
+    totalScore = sum(playerOne.values())
+
+    print(totalScore)
