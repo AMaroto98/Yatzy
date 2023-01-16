@@ -1,13 +1,16 @@
 from logicYatzy import Yatzy
 import random
+import os
+
+os.system("clear")
 
 print("Welcome to Yahtzee! \n")
 print("If this is your first time I recommend you to read the rules of the game that you can find in the README of the project. \n")
 
 # Tabla de puntuaciones
-playerOne = {"Ace": 0, "Twos": 0, "Threes": 0, "Fours": 0, "Fives": 0, "Sixes": 0,
+playerOne = {"Ones": 0, "Twos": 0, "Threes": 0, "Fours": 0, "Fives": 0, "Sixes": 0,
              "ThreeOfAKind": 0, "FourOfAKind": 0, "FullHouse": 0, "smallStraight": 0,
-             "largeStraight": 0, "Yathzee": 0, "Chance": 0}
+             "largeStraight": 0, "Yatzy": 0, "Chance": 0}
  
 totalScore: 0
 
@@ -34,7 +37,7 @@ for roll in range(1,2):
     keep = input("Qué números de la tirada te gustaría mantener?")
 
     diceRollTwo = []
-    if len(keep) < 0:
+    if len(keep) > 0:
         keep = keep.split(',')
 
         # Bucle para transformar los String de los dados guardados a Integers.
@@ -65,7 +68,7 @@ for roll in range(1,2):
 
     diceRollThree = []
 
-    if len(keep) < 0:
+    if len(keep) > 0:
         keep = keep.split(',')
 
          # Bucle para transformar los String de los dados guardados a Integers.
@@ -82,7 +85,7 @@ for roll in range(1,2):
         randomDice = random.randint(1,6)
         diceRollThree.append(randomDice)
     
-    # Bucle para Imprimir los resultados del segundo Roll.
+    # Bucle para imprimir los resultados del tercer Roll.
     for i in range(len(diceRollThree)):
         
         if i < len(diceRollThree) - 1:
@@ -90,3 +93,19 @@ for roll in range(1,2):
         else:
             print(diceRollThree[i])
 
+# Top Score
+playerOne.update({"Ones": Yatzy.ones(*diceRollThree)})
+playerOne.update({"Twos": Yatzy.twos(*diceRollThree)})
+playerOne.update({"Threes": Yatzy.threes(*diceRollThree)})
+playerOne.update({"Fours": Yatzy.fours(*diceRollThree)})
+playerOne.update({"Fives": Yatzy.fives(*diceRollThree)})
+playerOne.update({"Sixes": Yatzy.sixes(*diceRollThree)})
+
+# Bot Score
+playerOne.update({"ThreeOfAKind": Yatzy.three_of_a_kind(*diceRollThree)})
+playerOne.update({"FourOfAKind": Yatzy.four_of_a_kind(*diceRollThree)})
+playerOne.update({"FullHouse": Yatzy.fullHouse(*diceRollThree)})
+playerOne.update({"smallStraight": Yatzy.smallStraight(*diceRollThree)})
+playerOne.update({"largeStraight": Yatzy.largeStraight(*diceRollThree)})
+playerOne.update({"Yatzy": Yatzy.yatzy(*diceRollThree)})
+playerOne.update({"Chance": Yatzy.chance(*diceRollThree)})
