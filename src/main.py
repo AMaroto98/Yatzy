@@ -14,7 +14,7 @@ playerOne = {"Ones": 0, "Twos": 0, "Threes": 0, "Fours": 0, "Fives": 0, "Sixes":
  
 
 # Bucle para tener un control de los turnos. Poner range de 14 de nuevo
-for roll in range(1,14):
+for roll in range(1,3):
     print("Turn number " + str(roll) + "!")
     # Lista en la que se van a almacenar las tiradas de los dados
     diceRollOne = []
@@ -91,7 +91,7 @@ for roll in range(1,14):
         else:
             print(diceRollThree[i])
 
-    print("Ahora de anotar la puntuación \n")
+    print("Hora de anotar la puntuación \n")
 
     answer = input("Dónde quieres puntuar? En Top o en Bot?")
 
@@ -117,19 +117,20 @@ for roll in range(1,14):
     elif answer == "Bot":
 
         score_choice = input("Dónde quieres anotar los puntos? Three of a Kind, Four of a Kind, Full House etc.? ")
+
         if score_choice == "Three":
             playerOne.update({"ThreeOfAKind": Yatzy.three_of_a_kind(*diceRollThree)})
-        if score_choice == "Four":
+        elif score_choice == "Four":
             playerOne.update({"FourOfAKind": Yatzy.four_of_a_kind(*diceRollThree)})
-        if score_choice == "Full House":
+        elif score_choice == "Full":
             playerOne.update({"FullHouse": Yatzy.fullHouse(*diceRollThree)})
-        if score_choice == "Small":
+        elif score_choice == "Small":
             playerOne.update({"smallStraight": Yatzy.smallStraight(*diceRollThree)})
-        if score_choice == "Large":
+        elif score_choice == "Large":
             playerOne.update({"largeStraight": Yatzy.largeStraight(*diceRollThree)})
-        if score_choice == "Yatzy":
+        elif score_choice == "Yatzy":
             playerOne.update({"Yatzy": Yatzy.yatzy(*diceRollThree)})
-        if score_choice == "Chance":
+        elif score_choice == "Chance":
             playerOne.update({"Chance": Yatzy.chance(*diceRollThree)})
     
     else:
