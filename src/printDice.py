@@ -5,6 +5,4 @@ def printDice(diceRoll):
         if i < len(diceRoll) - 1:
             print(diceRoll[i], end =" ")
         else:
-            print(diceRoll[i])
-
-    pass
+            print(str(diceRoll[i]) + "\n")
