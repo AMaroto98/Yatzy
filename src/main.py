@@ -1,5 +1,7 @@
 from logicYatzy import Yatzy
-import random
+from printDice import printDice
+from keepDice import keepDice
+from randomNumbers import firstRoll, otherRolls
 import os
 
 os.system("clear")
@@ -13,84 +15,54 @@ playerOne = {"Ones": 0, "Twos": 0, "Threes": 0, "Fours": 0, "Fives": 0, "Sixes":
              "largeStraight": 0, "Yatzy": 0, "Chance": 0}
  
 
-# Bucle para tener un control de los turnos. Poner range de 14 de nuevo
+# Bucle para tener un control de los turnos.
 for roll in range(1,14):
+
     print("Turn number " + str(roll) + "!")
-    # Lista en la que se van a almacenar las tiradas de los dados
+
+    # Lista en la que se van a almacenar los dados de la primera tirada.
     diceRollOne = []
-    for roll in range(5):
-        # Añade a la lista un número aleatorio entre 1 y 6.
-        diceRollOne.append(random.randint(1,6))
 
-    # Mostramos dados de la primera tirada
+    # Llamamos a la función FirstRoll para conseguir los primeros 5 dados.
+    firstRoll(diceRollOne)
+
+    # Mostramos dados de la primera tirada.
     print("Roll 1: ", end="")
-    for i in range(len(diceRollOne)):
-        if i < len(diceRollOne) - 1:
-            print(diceRollOne[i], end =" ")
-        else:
-            print(diceRollOne[i])
+    printDice(diceRollOne)
 
-    # Dados que guarda el jugador para la próxima tirada.
-    # Faltan más condiciones, por si no quiere guardar ninguno.
+    # Dados que guarda el jugador para la segunda tirada.
     keep = input("Qué números de la tirada te gustaría mantener?")
 
+    # Lista en la que se van a almacenar los dados de la segunda tirada.
     diceRollTwo = []
-    if len(keep) > 0:
-        keep = keep.split(',')
 
-        # Bucle para transformar los String de los dados guardados a Integers.
-        for i in range(0, len(keep)):
-            keep[i] = int(keep[i])
-        
-        # Añadimos los dados guardados a la siguiente jugada.
-        diceRollTwo.extend(keep)
+    # Llamamos a función KeepDice para guardar dados, en el caso en que se guarden.
+    keepDice(keep, diceRollTwo)
 
-    print("Roll 2: ", end ="")
-    for i in range(5 - len(keep)):
-
-        # Más adelante refactorizar esto, de momento se queda así para tener un control de lo que ocurre
-        randomDice = random.randint(1,6)
-        diceRollTwo.append(randomDice)
+    # Llamamos a la función otherRolls para juntar los dados guardados de jugadas anteriores y los nuevos.
+    otherRolls(diceRollTwo, keep)
     
-    # Bucle para Imprimir los resultados del segundo Roll.
-    for i in range(len(diceRollTwo)):
-        
-        if i < len(diceRollTwo) - 1:
-            print(diceRollTwo[i], end =" ")
-        else:
-            print(diceRollTwo[i])
+    # Llamamos función printDice para imprimir los dados de la segunda tirada.
+    print("Roll 2: ", end ="")
+    printDice(diceRollTwo)
 
-    # Dados que guarda el jugador para la próxima tirada.
-    # Faltan más condiciones, por si no quiere guardar ninguno.
+    # Dados que guarda el jugador para la tercera tirada.
     keep = input("Qué números de la tirada te gustaría mantener?")
 
+    # Lista en la que se van a almacenar los dados de la tercera tirada.
     diceRollThree = []
 
-    if len(keep) > 0:
-        keep = keep.split(',')
+    # Llamamos a función KeepDice para guardar dados, en el caso en que se guarden.
+    keepDice(keep, diceRollThree)
 
-         # Bucle para transformar los String de los dados guardados a Integers.
-        for i in range(0, len(keep)):
-            keep[i] = int(keep[i])
-        
-        # Añadimos los dados guardados a la siguiente jugada.
-        diceRollThree.extend(keep)
+    # Llamamos a la función otherRolls para juntar los dados guardados de jugadas anteriores y los nuevos.
+    otherRolls(diceRollThree, keep)
 
+    # Bucle para imprimir los resultados del tercer y último Roll.
     print("Roll 3: ", end ="")
-    for i in range(5 - len(keep)):
+    printDice(diceRollThree)
 
-        # Más adelante refactorizar esto, de momento se queda así para tener un control de lo que ocurre
-        randomDice = random.randint(1,6)
-        diceRollThree.append(randomDice)
     
-    # Bucle para imprimir los resultados del tercer Roll.
-    for i in range(len(diceRollThree)):
-        
-        if i < len(diceRollThree) - 1:
-            print(diceRollThree[i], end =" ")
-        else:
-            print(diceRollThree[i])
-
     print("Ahora de anotar la puntuación \n")
 
     answer = input("Dónde quieres puntuar? En Top o en Bot?")
