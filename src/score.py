@@ -12,16 +12,24 @@ def score(answer, diceRollThree):
         
         if scoreChoice == "Ones":
             playerOne.update({"Ones": Yatzy.ones(*diceRollThree)})
+
         elif scoreChoice == "Twos":
             playerOne.update({"Twos": Yatzy.twos(*diceRollThree)})
+
         elif scoreChoice == "Threes":
             playerOne.update({"Threes": Yatzy.threes(*diceRollThree)})
+
         elif scoreChoice == "Fours":
             playerOne.update({"Fours": Yatzy.fours(*diceRollThree)})
+
         elif scoreChoice == "Fives":
             playerOne.update({"Fives": Yatzy.fives(*diceRollThree)})
+
         elif scoreChoice == "Sixes":
             playerOne.update({"Sixes": Yatzy.sixes(*diceRollThree)})
+            
+        else:
+            print("Respuesta no valida.")
     
     if answer == "Bot" or answer == "bot":
 
@@ -29,21 +37,27 @@ def score(answer, diceRollThree):
 
         if scoreChoice == "Three":
             playerOne.update({"ThreeOfAKind": Yatzy.three_of_a_kind(*diceRollThree)})
+
         elif scoreChoice == "Four":
             playerOne.update({"FourOfAKind": Yatzy.four_of_a_kind(*diceRollThree)})
+
         elif scoreChoice == "Full House":
             playerOne.update({"FullHouse": Yatzy.fullHouse(*diceRollThree)})
+
         elif scoreChoice == "Small":
             playerOne.update({"smallStraight": Yatzy.smallStraight(*diceRollThree)})
+
         elif scoreChoice == "Large":
             playerOne.update({"largeStraight": Yatzy.largeStraight(*diceRollThree)})
+
         elif scoreChoice == "Yatzy":
             playerOne.update({"Yatzy": Yatzy.yatzy(*diceRollThree)})
+
         elif scoreChoice == "Chance":
             playerOne.update({"Chance": Yatzy.chance(*diceRollThree)})
     
-    else:
-        print("Respuesta no valida.")
+        else:
+            print("Respuesta no valida.")
 
     totalScore = sum(playerOne.values())
 
