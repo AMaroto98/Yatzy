@@ -1,27 +1,28 @@
 import random
+class RandomNumbers:
 
-def firstRoll(diceRoll):
+    @staticmethod
+    def firstRoll(diceRoll):
 
-    for roll in range(5):
-        # Añade a la lista un número aleatorio entre 1 y 6.
-    
-        roll = diceRoll.append(random.randint(1,6))
+        for roll in range(5):
+        
+            diceRoll.append(random.randint(1,6))
 
-    return roll
+        return diceRoll
 
-def otherRolls(diceRoll, keep):
+    @staticmethod
+    def otherRolls(diceRoll, keep):
 
-    if len(keep) > 0:
+        if len(keep) > 0:
 
-        keep = keep.split(',')
+            keep = keep.split(',')
 
-        for i in range(0, len(keep)):
-            keep[i] = int(keep[i])
+            for i in range(0, len(keep)):
+                keep[i] = int(keep[i])
 
-    for i in range(5 - len(keep)):
+        for i in range(5 - len(keep)):
 
-        # Más adelante refactorizar esto, de momento se queda así para tener un control de lo que ocurre
-        randomDice = random.randint(1,6)
-        roll = diceRoll.append(randomDice)
+            randomDice = random.randint(1,6)
+            diceRoll.append(randomDice)
 
-    return roll
+        return diceRoll

@@ -1,8 +1,7 @@
-from logicYatzy import Yatzy
-from printDice import printDice
+from randomNumbers import RandomNumbers
+from prints import printDice
 from keepDice import keepDice
 from score import score
-from randomNumbers import firstRoll, otherRolls
 import os
 
 os.system("clear")
@@ -19,7 +18,7 @@ for roll in range(1,14):
     diceRollOne = []
 
     # Llamamos a la función FirstRoll para conseguir los primeros 5 dados.
-    firstRoll(diceRollOne)
+    RandomNumbers.firstRoll(diceRollOne)
 
     # Mostramos dados de la primera tirada.
     print("Roll 1: ", end="")
@@ -35,7 +34,7 @@ for roll in range(1,14):
     keepDice(keep, diceRollTwo)
 
     # Llamamos a la función otherRolls para juntar los dados guardados de jugadas anteriores y los nuevos.
-    otherRolls(diceRollTwo, keep)
+    RandomNumbers.otherRolls(diceRollTwo, keep)
     
     # Llamamos función printDice para imprimir los dados de la segunda tirada.
     print("\n" + "Roll 2: ", end ="")
@@ -51,7 +50,7 @@ for roll in range(1,14):
     keepDice(keep, diceRollThree)
 
     # Llamamos a la función otherRolls para juntar los dados guardados de jugadas anteriores y los nuevos.
-    otherRolls(diceRollThree, keep)
+    RandomNumbers.otherRolls(diceRollThree, keep)
 
     # Bucle para imprimir los resultados del tercer y último Roll.
     print("\n" + "Roll 3: ", end ="")
