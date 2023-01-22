@@ -2,17 +2,25 @@ from randomNumbers import RandomNumbers
 from prints import printDice
 from keepDice import keepDice
 from score import score
+import time
 import os
 
 os.system("clear")
 
 print("Welcome to Yahtzee! \n")
+
+time.sleep(2)
+
 print("If this is your first time I recommend you to read the rules of the game that you can find in the README of the project. \n")
+
+time.sleep(4)
  
 # Bucle para tener un control de los turnos.
 for roll in range(1,14):
 
     print("Turn number " + str(roll) + "!" + "\n")
+
+    time.sleep(2)
 
     # Lista en la que se van a almacenar los dados de la primera tirada.
     diceRollOne = []
@@ -23,6 +31,8 @@ for roll in range(1,14):
     # Mostramos dados de la primera tirada.
     print("Roll 1: ", end="")
     printDice(diceRollOne)
+
+    time.sleep(3)
 
     # Dados que guarda el jugador para la segunda tirada.
     keep = input("Qué números de la tirada te gustaría mantener? ")
@@ -40,6 +50,8 @@ for roll in range(1,14):
     print("\n" + "Roll 2: ", end ="")
     printDice(diceRollTwo)
 
+    time.sleep(3)
+
     # Dados que guarda el jugador para la tercera tirada.
     keep = input("Qué números de la tirada te gustaría mantener? ")
 
@@ -56,12 +68,17 @@ for roll in range(1,14):
     print("\n" + "Roll 3: ", end ="")
     printDice(diceRollThree)
 
+    time.sleep(3)
+
     print("Hora de anotar la puntuación \n")
+
+    time.sleep(2)
 
     answer = input("Dónde quieres puntuar? En Top o en Bot? ")
 
     # Llamamos a la funcion score para anotar la puntuación de la ronda.
     score(answer, diceRollThree)
-    
-    # Print para saber que el turno acaba
-    print("Final del turno!")
+
+    time.sleep(5)
+
+    # os.system("clear")
