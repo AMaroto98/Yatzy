@@ -1,5 +1,25 @@
 ﻿# Yatzy
 
+Yatzy es un juego de mesa desarollado por Antonio Maroto como alumno del Instituto Francesc de Borja Moll para la asignatura de Programación.
+
+---
+
+## Índice
+
+ - [¿Qué es Yatzy?](#¿qué-es-yatzy)
+
+ - [¿Cómo jugar a Yatzy?](#¿cómo-jugar-a-yatzy)
+
+ - Desarollo
+
+---
+
+## ¿Qué es Yatzy?
+
+Yatzy es un juego de dados cuyo objetivo es obtener la mayor puntuación posible tras sumar las 13 combinaciones disponibles en la tabla de puntuaciones. Puede jugar cualquier número de jugadores, incluso se puede jugar en solitario
+
+---
+
 ## ¿Cómo jugar a Yatzy?
 
 Yatzy es un juego simple de dados. Cada jugador lanza 5 dados de 6 caras cada uno. Puedes volver a lanzar los dados hasta un máximo de tres veces (incluyendo el lanzamiento original)
@@ -173,3 +193,8 @@ El jugador decide guardar los dados en los que ha obtenido un cinco (5,-,5,5,-) 
 Una vez tenemos los dados finales podemos observar que hemos obtenido una de la siguientes opciones Full House, 3 iguales, Chance / Azar, Treses o Cincos. 
 
 Ahora ya es decisión del jugador elegir donde puntuar.
+
+## Desarollo
+
+
+
