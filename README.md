@@ -303,4 +303,10 @@ Tambien se encarga de calcular en cada ronda la puntuación acumulada que lleva 
 
 ## Casos tests
 
+Para poder comprobar que las funciones funcionan correctamente he desarrollado diferentes casos test para cada módulo, a excepción del módulo prints.py que como solo se dedica a pintar por pantalla no sabía como podía testearlo y el de score.
+
+![pytest](images/pytest.png)
+
+Como vemos todos los casos test pasan con éxito. El porcentaje que sale a la derecha representa el % del total que representa ese módulo.
+
 
