@@ -101,7 +101,3 @@ def score(answer, diceRollThree):
     time.sleep(2)
 
     print("\n" + "La puntuación total es de: " + str(totalScore) + "\n")
-
-    time.sleep(2)
-
-    print("Final del turno!" + "\n")
