@@ -1,5 +1,5 @@
 from randomNumbers import RandomNumbers
-from prints import printDice
+from prints import printDice, printTitle, printWarning, printEndTurn, timeToScore
 from keepDice import keepDice
 from score import score
 import time
@@ -7,11 +7,11 @@ import os
 
 os.system("clear")
 
-print("Welcome to Yahtzee! \n")
+printTitle()
 
 time.sleep(2)
 
-print("If this is your first time I recommend you to read the rules of the game that you can find in the README of the project. \n")
+printWarning()
 
 time.sleep(4)
  
@@ -70,7 +70,7 @@ for roll in range(1,14):
 
     time.sleep(3)
 
-    print("Hora de anotar la puntuación \n")
+    timeToScore()
 
     time.sleep(2)
 
@@ -79,6 +79,6 @@ for roll in range(1,14):
     # Llamamos a la funcion score para anotar la puntuación de la ronda.
     score(answer, diceRollThree)
 
-    time.sleep(5)
+    time.sleep(2)
 
-    # os.system("clear")
+    printEndTurn()

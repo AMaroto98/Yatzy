@@ -194,6 +194,8 @@ Una vez tenemos los dados finales podemos observar que hemos obtenido una de la 
 
 Ahora ya es decisión del jugador elegir donde puntuar.
 
+---
+
 ## Funcionamiento del programa
 
 **Inicio del juego**
@@ -246,5 +248,55 @@ Ahora ya es decisión del jugador elegir donde puntuar.
 **Fin de la partida**
 
     - Se muestra por pantalla el nombre del usuario y su puntuación total de la partida.
+
+---
+
+## Módulos y funciones
+
+El programa de Yatzy está compuesto por los siguientes módulos:
+
+### Main
+
+Es el módulo principal del programa y el que se encarga de ejecutar el juego. En si solo no es capaz de hacer nada más que imprimir cosas por pantalla.
+
+Para que funcione adecuadamente necesita el resto de módulos, por ellos se importan del resto de módulos las clases y funciones que necesitamos.
+
+### LogicYatzy
+
+Es el módulo encargado de las matemáticas del juego. En él hay 15 funciones diferentes, cada una de ellas encargada de calcular cuantos puntos obtiene un usuario al pasarle por parámetros un número de dados indeterminado, puede ser 1 que 10, funciona igual.
+
+### RandonNumbers
+
+Es el módulo encargado de generar los números de los dados que van a almacenar las listas.
+
+Hay dos funciones diferentes:
+
+#### FirstRoll
+
+Es la encargada de generar los 5 primeros números que el usuario verá por pantalla.
+
+#### OtherRolls
+
+Es la encargada de generar los otros lanzamientos que verá el usuario. La diferencia principal es que otherRolls tiene en cuenta los dados que el usuario quiere guardar para el resto de lanzamientos.
+
+### KeepDice
+
+Módulo que se encarga de almacenar los inputs que el usuario introduce por la terminal, en la mayoría de los casos los dados y convertilos de String a Integer y añadirlos al segundo o tercer lanzamiento.
+
+### Prints
+
+Módulo con varias funciones muy simples que imprimen los números en lugar de vertical en horizontal, el título del juego, el final del turno...
+
+### Score
+
+Módulo bastante importante encargado de crear la variable donde se almacena la puntuación del jugador y de actualizarla.
+
+Se compone únicamente de una función llamada score en la que mediante inputs que el usuario introduce determina que valor del diccionario se actualiza.
+
+Tambien se encarga de calcular en cada ronda la puntuación acumulada que lleva hasta el momento.
+
+---
+
+## Casos tests
 
 
