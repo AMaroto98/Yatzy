@@ -194,7 +194,57 @@ Una vez tenemos los dados finales podemos observar que hemos obtenido una de la 
 
 Ahora ya es decisión del jugador elegir donde puntuar.
 
-## Desarollo
+## Funcionamiento del programa
 
+**Inicio del juego**
+
+    - Usuario introduce su nombre.
+    - Se crea un diccionario en el que se almacena la tabla de puntuaciones.
+
+**Primer lanzamiento de los dados**
+
+    - Se crea una lista vacía llamada diceRollOne[] en la que se van a almacenar los dados de la primera tirada.
+    - Se añaden números aleatorios mediante la biblioteca random.
+    - Dicha lista se muestra al usuario mediante la terminal.
+
+**Guardar dados**
+
+    - Se le pregunta al usario si quiere mantener alguno de los dados de la primera tirada.
+    - Si el usuario quiere almacenar los dados indica cuales escribiendolo en la terminal.
+    - Esos dados se almacenan en una variable llamada Keep.
+    - Los datos que introduce el usuario mediante consola son un String.
+    - Transformo esos Strings en Integers y los añado a una nueva lista vacia, la lista del segundo lanzamiento llamada diceRollTwo[].
+
+**Segunda lanzamiento**
+
+    - La lista diceRollTwo contiene x números que ha guardado el usuario de la primera tirada.
+    - Se le añade a la lista del segundo lanzamiento 5 - x números para tener todos los dados de la tirada.
+    - Se muestra el resultado de los 5 dados al usuario mediante la terminal.
+
+**Guardra dados**
+
+    - Se le pregunta al usario si quiere mantener alguno de los dados de la segunda tirada.
+    - Si el usuario quiere almacenar los dados indica cuales escribiendolo en la terminal.
+    - Esos dados se almacenan en una variable llamada Keep.
+    - Los datos que introduce el usuario mediante consola son un String.
+    - Transformo esos Strings en Integers y los añado a una nueva lista vacia, la lista del tercer lanzamiento llamada diceRollThree[].
+
+**Tercer lanzamiento**
+
+    - La lista diceRollThree contiene x números que ha guardado el usuario de la primera segunda.
+    - Se le añade a la lista del tercer lanzamiento 5 - x números para tener todos los dados de la tirada.
+    - Como es la última tirada no se pueden almacenar más dados, así que simplemente se muestran por terminal los cinco números.
+
+**Puntuar**
+
+    - Se le pregunta al usuario en que sección de la tabla quiere puntuar el usuario: Top (Superior) o Bot (Inferior).
+    - Cuando ha elegido la sección tiene que seleccionar en que recuadro de la sección: Ones, Twos, Threes, Fours, Fives o Sixes.
+    - Mediante una fución se detecta la puntuación que obtiene el usuario al seleccionar cada recuadro.
+    - Se actualiza el diccionario con la puntuación que he determinado la función.
+    - Se imprime por pantalla el diccionario y la puntuación de cada sección y la puntuación total acumulada.
+
+**Fin de la partida**
+
+    - Se muestra por pantalla el nombre del usuario y su puntuación total de la partida.
 
 
