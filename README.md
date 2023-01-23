@@ -1,4 +1,4 @@
-﻿# Proyecto Yatzy
+﻿# Yatzy
 
 ## ¿Cómo jugar a Yatzy?
 
@@ -21,7 +21,7 @@ Tenemos dos secciones donde podemos puntuar:
 - Sección superior
 - Sección inferior
 
-#### Sección superior
+### Sección superior
 
 En la sección superior podemos anotar la suma de todos los números iguales que hemos obtenido.
 
@@ -43,11 +43,11 @@ Podemos obtener puntuación extra (35 puntos) si la suma de todas las casillas d
 
 ---
 
-#### Sección inferior
+### Sección inferior
 
 Así como la sección superior se rige por una misma norma, la suma de todos los números iguales, la sección inferior mayoritariamente es diferente, veámoslo en detalle:
 
-##### 3 iguales
+#### 3 iguales
 
 Es igual que en la sección superior, se produce cuando obtenemos tres dados iguales.
 
@@ -61,7 +61,7 @@ La puntuación en este caso sería de 9 puntos.
 
 ---
 
-##### 4 iguales
+#### 4 iguales
 
 Es igual que en la sección superior, se produce cuando obtenemos cuatro dados iguales.
 
@@ -75,7 +75,7 @@ La puntuación en este caso sería de 8 puntos.
 
 ---
 
-##### Full / Full House:
+#### Full / Full House:
 
 Se produce cuando obtenemos la combinación de dos y tres dados iguales.
 
@@ -87,7 +87,7 @@ Por ejemplo:
 
 ---
 
-##### Escalera corta:
+#### Escalera corta:
 
 Se produce cuando obtenemos una secuencia de cuatro números consecutivos.
 
@@ -99,7 +99,7 @@ Por ejemplo:
 
 ---
 
-##### Escalera larga:
+#### Escalera larga:
 
 Se produce cuando obtenemos una secuencia de cinco números consecutivos.
 
@@ -111,7 +111,7 @@ Por ejemplo:
 
 ---
 
-##### Yatzy:
+#### Yatzy:
 
  Se produce cuando obtenemos cinco números iguales.
 
@@ -123,7 +123,7 @@ Por ejemplo:
 
 ---
 
-##### Azar / Chance:
+#### Azar / Chance:
 
 Se produce siempre, y podemos decidir usarlo cuando queramos, sería algo así como un comodín.
 
@@ -137,19 +137,19 @@ La puntuación en este caso sería de 9 puntos.
 
 ---
 
-##### Extra
+#### Extra
 
 Si a lo largo de la partida un jugador consigue hacer más de un Yatzy se le suman 50 puntos.
 
 ---
 
-##### Importante
+#### Importante
 
 Si durante el transcurso de la partida algún jugador obtiene una combinación de 5 dados que no le aporta nada en ninguna de las secciones, está obligado a puntuar 0 puntos.
 
 Todos los jugadores deben puntuar siempre en todos los turnos.
 
-##### Total general
+#### Total general
 
 Es la suma de ambas secciones.
 
@@ -170,4 +170,6 @@ El jugador decide guardar los dados en los que ha obtenido un cinco (5,-,5,5,-) 
 
     5,3,5,5,3
 
-Una vez tenemos los dados finales podemos ir a la tabla de puntuaciones:
+Una vez tenemos los dados finales podemos observar que hemos obtenido una de la siguientes opciones Full House, 3 iguales, Chance / Azar, Treses o Cincos. 
+
+Ahora ya es decisión del jugador elegir donde puntuar.
