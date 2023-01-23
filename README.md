@@ -10,7 +10,11 @@ Yatzy es un juego de mesa desarollado por Antonio Maroto como alumno del Institu
 
  - [¿Cómo jugar a Yatzy?](#¿cómo-jugar-a-yatzy)
 
- - Desarollo
+ - [Funciones del programa](#funcionamiento-del-programa)
+
+ - [Módulos y funciones](#módulos-y-funciones)
+
+ - [Casos test](#casos-tests)
 
 ---
 
