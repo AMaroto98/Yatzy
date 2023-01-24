@@ -24,8 +24,8 @@ def printWarning():
 
 def printEndTurn():
 
-    print("Final del turno!" + "\n")
+    print("End of shift" + "\n")
 
 def timeToScore():
 
-    print("Hora de anotar la puntuación: \n")
+    print("Time to score: \n")

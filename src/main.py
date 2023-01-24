@@ -35,7 +35,7 @@ for roll in range(1,14):
     time.sleep(3)
 
     # Dados que guarda el jugador para la segunda tirada.
-    keep = input("Which issues of the roll would you like to keep? ")
+    keep = input("What dice would you like to keep? ")
 
     # Lista en la que se van a almacenar los dados de la segunda tirada.
     diceRollTwo = []
@@ -53,7 +53,7 @@ for roll in range(1,14):
     time.sleep(3)
 
     # Dados que guarda el jugador para la tercera tirada.
-    keep = input("Which issues of the roll would you like to keep? ")
+    keep = input("What dice would you like to keep? ")
 
     # Lista en la que se van a almacenar los dados de la tercera tirada.
     diceRollThree = []
@@ -74,13 +74,12 @@ for roll in range(1,14):
 
     time.sleep(2)
 
-    # try:
-        
-    answer = input("Dónde quieres puntuar? En Top o en Bot? ")
-
-    # except TypeError:
-
-    print("Los números o carácteres extraños no están permitidos")
+    try:
+        answer = input("Where do you want to score? Top or Bot? ").lower()
+        if answer != "top" and answer != "bot":
+            raise TypeError
+    except TypeError:
+        print("Only 'top' or 'bot' values are allowed.")
 
     # Llamamos a la funcion score para anotar la puntuación de la ronda.
     score(answer, diceRollThree)
