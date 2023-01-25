@@ -87,3 +87,5 @@ for roll in range(1,14):
     time.sleep(2)
 
     printEndTurn()
+
+print("End of game")
