@@ -78,6 +78,7 @@ for roll in range(1,14):
         answer = input("Where do you want to score? Top or Bot? ").lower()
         if answer != "top" and answer != "bot":
             raise TypeError
+            
     except TypeError:
         print("Only 'top' or 'bot' values are allowed.")
 

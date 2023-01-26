@@ -1,7 +1,7 @@
 import pytest
 from src.randomNumbers import RandomNumbers
 
-@pytest.mark.firsRoll
+@pytest.mark.firstRoll
 def test_firstRoll():
     assert len(RandomNumbers.firstRoll([])) == 5
     assert type(RandomNumbers.firstRoll([])[0]) == int 

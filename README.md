@@ -8,19 +8,86 @@ Yatzy es un juego de mesa desarollado por Antonio Maroto como alumno del Institu
 
  - [¿Qué es Yatzy?](#¿qué-es-yatzy)
 
+ - [Manual](#manual)
+
+    - [Requisitos](#requisitos)
+    - [Instalación](#instalación)
+
  - [¿Cómo jugar a Yatzy?](#¿cómo-jugar-a-yatzy)
 
  - [Funciones del programa](#funcionamiento-del-programa)
 
+ - [Diseño](#diseño)
+
  - [Módulos y funciones](#módulos-y-funciones)
 
  - [Casos test](#casos-tests)
+
+ - [Conclusiones](#conclusiones)
+
+    - [Mejoras](#mejoras)
+    - [Dificultades](#dificultades)
 
 ---
 
 ## ¿Qué es Yatzy?
 
 Yatzy es un juego de dados cuyo objetivo es obtener la mayor puntuación posible tras sumar las 13 combinaciones disponibles en la tabla de puntuaciones. Puede jugar cualquier número de jugadores, incluso se puede jugar en solitario
+
+---
+
+## Manual
+
+### Requisitos
+
+Para poner en funcionamineto el programa neceitas los siguientes requisitos mínimos:
+
+- Python3
+- pip3
+- Git
+- Linux
+
+---
+
+### Instalación
+
+Es muy recomendable realizar la instalación de todas las dependencias del programa en un entorno virtual.
+Para llevar a cabo la instalación en **Linux** ejecuta los siguientes comandos:
+
+~~~
+$ sudo apt-get install python3-venv
+~~~
+
+Crea un directorio y sitúate dentro de él. Es importante crearlo pues aquí dentro se almacenará todo el código de la aplicación.
+
+~~~
+$ mkdir Yatzy
+$ cd Yatzy
+~~~
+
+Una vez dentro del directorio clonamos el repositorio de Github.
+
+~~~
+$ git clone https://github.com/AMaroto98/Yatzy.git
+~~~
+
+Se ha preparado un archivo 'setup' para descargar las dependencias necesarias. Para ejecutarlo hay que usar el comando:
+
+~~~
+$ ./setup.sh
+~~~
+
+Para activar el entorno virtual ejecuta el siguiente comando:
+
+~~~
+$ source venv/bin/activate
+~~~
+
+Para comprobar que todas las dependencias se han instalado y ver sus versiones usamos el siguiente comando:
+
+~~~
+pip3 list
+~~~
 
 ---
 
@@ -255,6 +322,12 @@ Ahora ya es decisión del jugador elegir donde puntuar.
 
 ---
 
+## Diseño
+
+![Diseño](images/Dise%C3%B1o.png)
+
+---
+
 ## Módulos y funciones
 
 El programa de Yatzy está compuesto por los siguientes módulos:
@@ -309,5 +382,23 @@ Para poder comprobar que las funciones funcionan correctamente he desarrollado d
 
 Como vemos todos los casos test pasan con éxito. El porcentaje que sale a la derecha representa el % del total que representa ese módulo.
 
+---
 
+## Conclusiones
 
+### Mejoras
+
+En el apartado de mejoras me gustaría añadir:
+
+- Una IA para poder jugar contra el propio ordenador.
+- Modo de 2 - 8 jugadores.
+- Cuando acabe la partida se genere un archivo con la tabla de puntuaciones y los puntos que ha hecho cada jugador.
+
+---
+
+### Dificultades
+
+He tenido algunas dificultades a la hora de desarrollar el proyecto:
+
+- A la hora de hacer los casos test de las funciones que dependian de la biblioteca Random.
+- No saber como testear funciones que simplemente son un Print.
