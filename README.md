@@ -1,6 +1,6 @@
 ﻿# Yatzy
 
-Yatzy es un juego de mesa desarollado por Antonio Maroto como alumno del Instituto Francesc de Borja Moll para la asignatura de Programación.
+Yatzy es un juego de mesa desarrollado por Antonio Maroto como alumno del Instituto Francesc de Borja Moll para la asignatura de Programación.
 
 ---
 
@@ -40,7 +40,7 @@ Yatzy es un juego de dados cuyo objetivo es obtener la mayor puntuación posible
 
 ### Requisitos
 
-Para poner en funcionamineto el programa neceitas los siguientes requisitos mínimos:
+Para poner en funcionamiento el programa necesitas los siguientes requisitos mínimos:
 
 - Python3
 - pip3
@@ -400,5 +400,5 @@ En el apartado de mejoras me gustaría añadir:
 
 He tenido algunas dificultades a la hora de desarrollar el proyecto:
 
-- A la hora de hacer los casos test de las funciones que dependian de la biblioteca Random.
+- A la hora de hacer los casos test de las funciones que dependían de la biblioteca Random.
 - No saber como testear funciones que simplemente son un Print.
